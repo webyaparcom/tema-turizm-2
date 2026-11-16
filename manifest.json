@@ -1,0 +1,29 @@
+{
+  "name": "Seyyah Rota",
+  "short_name": "Seyyah Rota",
+  "description": "Seyyah Rota: Ayvalık’ta zeytinlikler arasında dokuz odalı taş konak ve rehberli köy rotaları. Gece aralığıyla rezervasyon talebi. Demo site; içerik kurgusaldır.",
+  "start_url": "/tr/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#167A73",
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "/img/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

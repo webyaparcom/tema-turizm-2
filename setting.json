@@ -1,0 +1,54 @@
+{
+  "order": false,
+  "user": false,
+  "description": {
+    "tr": "Seyyah Rota: Ayvalık’ta zeytinlikler arasında dokuz odalı taş konak ve rehberli köy rotaları. Gece aralığıyla rezervasyon talebi. Demo site; içerik kurgusaldır.",
+    "en": "Seyyah Rota: a nine-room stone house among the olive groves of Ayvalik, with guided village routes. Booking requests by date range. Demo site; content is fictional.",
+    "ar": "سيّاح روتا: بيت حجري من تسع غرف بين بساتين الزيتون في أيفاليك مع جولات قروية بإرشاد. طلب حجز حسب نطاق الليالي. موقع تجريبي؛ المحتوى افتراضي."
+  },
+  "keyword": {
+    "tr": "butik konak, ayvalık, köy rotası, rehberli gezi, zeytinlik, rezervasyon",
+    "en": "boutique stone house, ayvalik, village route, guided tour, olive grove, booking",
+    "ar": "بيت ضيافة، أيفاليك، جولة قروية، جولة بإرشاد، بستان زيتون، حجز"
+  },
+  "category": "Kurumsal",
+  "name": "Seyyah Rota",
+  "domain": "turizm-2.webyapar.com",
+  "langs": {
+    "tr": true,
+    "en": true,
+    "ar": true,
+    "de": false,
+    "ru": false,
+    "es": false,
+    "fr": false,
+    "it": false,
+    "ja": false,
+    "zh": false,
+    "ko": false,
+    "pt": false
+  },
+  "logo": "logo.png",
+  "multi": false,
+  "publishMode": "static",
+  "font": {
+    "body": "poppins",
+    "heading": "lora",
+    "ar": {
+      "body": "ibm-plex-sans-arabic",
+      "heading": "noto-kufi-arabic"
+    }
+  },
+  "colorScheme": "auto",
+  "theme_color": "#167A73",
+  "seo": {
+    "noindex": true
+  },
+  "cssTokens": {
+    "--mx-radius-sm": "10px",
+    "--mx-radius-md": "16px",
+    "--mx-radius-lg": "22px",
+    "--mx-radius-xl": "30px"
+  },
+  "icon": "icon.png"
+}

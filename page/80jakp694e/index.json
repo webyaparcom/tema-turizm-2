@@ -1,0 +1,39 @@
+{
+  "id": "80jakp694e",
+  "name": {
+    "tr": "Rezervasyon",
+    "en": "Booking",
+    "ar": "الحجز"
+  },
+  "description": {
+    "tr": "Gece aralığına göre rezervasyon talebi (demo).",
+    "en": "Booking request by date range (demo).",
+    "ar": "طلب حجز حسب نطاق الليالي (تجريبي)."
+  },
+  "keyword": {
+    "tr": "rezervasyon",
+    "en": "booking",
+    "ar": "حجز"
+  },
+  "path": "teklif-al",
+  "icon": "event",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "mnq44i"
+    ],
+    "footer": []
+  },
+  "index": 2,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Rezervasyon",
+    "en": "Booking",
+    "ar": "الحجز"
+  },
+  "date": "2026-11-16T18:17:26.490Z",
+  "update": "2026-11-16T18:25:02.893Z"
+}
