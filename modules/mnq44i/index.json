@@ -1,0 +1,57 @@
+{
+  "name": "Randevu Konaklama Aralığı — giriş/çıkış, gece şeridi ve toplam",
+  "description": "Üstte gölgeli rezervasyon bandı: giriş tarihi, ay simgeleriyle dolan gece köprüsü, çıkış tarihi (giriş + 1 … + azami gece ile sınırlı) ve misafir sayacı. Altında solda görselli oda/paket satırları (ad, açıklama, gecelik fiyat), sağda yapışkan hesap kartı: gece sayısı, gece × oda fiyatı = toplam (sayfa dilinde), ad, telefon, e-posta, not, KVKK ve gönder. Talebe «N gece · toplam» satırı eklenir. JS yokken iki tarih ve oda seçimi gönderilir, hesap kutusu gizlenir. Tüm randevu-* modülleri tek tarih + saat ister; bu modül tarih ARALIĞI (giriş/çıkış) kurar, gece sayısını ve gece × fiyat toplamını canlı hesaplar (gece parçası) — randevu-hizmet-sepeti çoklu hizmet toplar, randevu-arama-cubugu tek satırda kalır; burada bant + oda listesi + hesap kartı üç bloklu konaklama iskeleti. Sunucusuz gönderim (formAction JSON POST › WhatsApp › .ics › mailto), kapalı gün denetimi, KVKK onayı. Metinler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Gönderim yolu yoksa blok basılmaz.",
+  "version": "1.0.0",
+  "icon": "hotel",
+  "category": "randevu",
+  "subCategory": "stay-range",
+  "tags": [
+    "randevu",
+    "date-range",
+    "stay",
+    "nights",
+    "total",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "clamp(56px, 8vw, 104px)",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "bg": "var(--mx-site-surface, #f6f7f9)",
+    "text": "var(--mx-site-text, #111318)",
+    "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 70%, var(--mx-site-surface, #f6f7f9))",
+    "kartBg": "var(--mx-site-bg, #ffffff)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguBg": "var(--mx-site-primary, #2563eb)",
+    "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+    "girisAd": "",
+    "cikisAd": "",
+    "geceBirim": "",
+    "geceFiyatAd": "",
+    "toplamAd": "",
+    "azamiGece": 30,
+    "bgcolor": "var(--mx-site-surface, #f6f7f9)",
+    "color": "var(--mx-site-text, #111318)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing",
+    "alanlar": {
+      "ad": "hizmet adı (dil sözlüğü, zorunlu) — eski `services[].name`",
+      "sure": "dakika — eski `duration`",
+      "fiyat": "sayı (sayfa diliyle biçimlenir) — eski `price`",
+      "ikon": "Material Symbols adı",
+      "metin": "kısa açıklama (dil sözlüğü)",
+      "img": "görsel (destekleyen yerleşimde)"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "Yorum Kartpostal — pullu, damgalı kartpostal arkası",
+  "description": "Her yorum bir kartpostalın arka yüzü: hava postası çizgili kenar, ortadan dikey çizgi; bir yanda başlık, italik yorum ve el yazısı imza, öbür yanda tırtıklı pul (fotoğraf ya da baş harf), üstüne yuvarlak posta damgası (`tarih`/`kaynak`, görünür olunca basılır), puan ve adres satırlarında unvan · firma. Mobilde iki yarı alt alta. Seyahat/hatıra nesnesi: iki bölmeli kartpostal düzeni (mesaj | adres + pul + damga) — yorum-mektup'un çizgili tek sütun kâğıdından ve yorum-konuk-defteri'nin sayfa çevirmesinden farklı olarak kimlik pul ve adres satırlarında, tarih damgada taşınır. Metinler dil sözlüğü, renkler desing + var(--mx-site-*), mantıksal CSS → RTL. Veri yoksa blok basılmaz.",
+  "version": "1.0.0",
+  "icon": "local_post_office",
+  "category": "testimonial",
+  "subCategory": "postcard",
+  "tags": [
+    "testimonial",
+    "postcard",
+    "stamp",
+    "travel",
+    "paper",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "clamp(56px, 8vw, 104px)",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "bg": "var(--mx-site-surface, #f6f7f9)",
+    "text": "var(--mx-site-text, #111318)",
+    "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 70%, var(--mx-site-surface, #f6f7f9))",
+    "kartBg": "var(--mx-site-bg, #ffffff)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguBg": "var(--mx-site-primary, #2563eb)",
+    "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+    "yildiz": "color-mix(in srgb, var(--mx-color-warning, #d97706) 78%, var(--mx-site-text, #111318))",
+    "bgcolor": "var(--mx-site-surface, #f6f7f9)",
+    "color": "var(--mx-site-text, #111318)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "data",
+    "alanlar": {
+      "metin": "yorum metni — dil sözlüğü (zorunlu)",
+      "ad": "yorumu yapanın adı",
+      "unvan": "görev / unvan (dil sözlüğü)",
+      "firma": "firma adı",
+      "puan": "1–5 yıldız (0/boş → yıldız yok)",
+      "img": "avatar / portre görseli",
+      "logo": "firma logosu (destekleyen yerleşimde)",
+      "baslik": "yorum başlığı (destekleyen yerleşimde)",
+      "tarih": "tarih metni",
+      "kaynak": "kaynak (Google, Instagram …)"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+<section class="modulex-yorum-kartpostal{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-yorum-kartpostal-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* yorum-kartpostal — Seyahat/hatıra nesnesi: iki bölmeli kartpostal düzeni (mesaj | adres + pul + damga) — yorum-mektup'un çizgili tek sütun kâğıdından ve yorum-konuk-defteri'nin sayfa çevirmesinden farklı olarak kimlik pul ve adres satırlarında, tarih damgada taşınır. */
+  .modulex-yorum-kartpostal { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-yorum-kartpostal *, .modulex-yorum-kartpostal *::before, .modulex-yorum-kartpostal *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-yorum-kartpostal :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-yorum-kartpostal :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-yorum-kartpostal :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-yorum-kartpostal :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-yorum-kartpostal img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-yorum-kartpostal) img { height: auto; }
+  .modulex-yorum-kartpostal [hidden] { display: none !important; }
+  .modulex-yorum-kartpostal :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-yorum-kartpostal :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-yorum-kartpostal-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-yorum-kartpostal-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-yorum-kartpostal--bassiz .modulex-yorum-kartpostal-bas { display: none; }
+  .modulex-yorum-kartpostal-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-yorum-kartpostal-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-yorum-kartpostal-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-yorum-kartpostal-bas { max-width: 780px; margin-inline: auto; text-align: center; justify-items: center; }
+  .modulex-yorum-kartpostal-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-yorum-kartpostal-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-yorum-kartpostal-dugme:hover { transform: translateY(-2px); }
+  .modulex-yorum-kartpostal-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-yorum-kartpostal-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-yorum-kartpostal-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-yorum-kartpostal-ad { font-weight: 700; }
+  .modulex-yorum-kartpostal-kisi { display: grid; gap: 2px; min-width: 0; }
+  .modulex-yorum-kartpostal-unvan { color: --muted--; font-size: 0.88rem; line-height: 1.45; }
+  .modulex-yorum-kartpostal-puan { display: flex; gap: 2px; color: --yildiz--; }
+  .modulex-yorum-kartpostal-puan .material-symbols-outlined { font-size: 20px; font-variation-settings: "FILL" 1; }
+  .modulex-yorum-kartpostal-yildiz--bos { opacity: 0.3; }
+  .modulex-yorum-kartpostal-avatar { flex: none; width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
+  .modulex-yorum-kartpostal-harf { display: inline-grid; place-items: center; background: color-mix(in srgb, --accent-- 18%, --kartBg--); color: --accentInk--; font-weight: 800; letter-spacing: 0.02em; }
+  .modulex-yorum-kartpostal-yazar { display: flex; align-items: center; gap: 12px; }
+
+  .modulex-yorum-kartpostal-izgara { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr)); gap: 32px; }
+  .modulex-yorum-kartpostal-yuz { position: relative; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); min-height: 310px; padding: 30px; border-radius: 6px; background: --kartBg--; box-shadow: 0 22px 40px -30px color-mix(in srgb, --text-- 75%, transparent); transform: rotate(calc(var(--i) * 0.6deg - 0.9deg)); transition: transform 0.4s ease, box-shadow 0.4s ease; }
+  .modulex-yorum-kartpostal-yuz::before { content: ""; position: absolute; inset: 0; padding: 7px; border-radius: inherit; background: repeating-linear-gradient(135deg, --accent-- 0 14px, transparent 14px 28px, color-mix(in srgb, --yildiz-- 80%, --kartBg--) 28px 42px, transparent 42px 56px); -webkit-mask: linear-gradient(black 0 0) content-box, linear-gradient(black 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+  .modulex-yorum-kartpostal-kart:hover .modulex-yorum-kartpostal-yuz { transform: rotate(0deg) translateY(-4px); box-shadow: 0 30px 50px -30px color-mix(in srgb, --text-- 80%, transparent); }
+  .modulex-yorum-kartpostal-mesaj { display: grid; align-content: start; gap: 12px; padding-inline-end: clamp(16px, 2.6vw, 28px); border-inline-end: 1px solid --cizgi--; }
+  .modulex-yorum-kartpostal-kbaslik { font-size: 1.05rem; font-weight: 750; }
+  .modulex-yorum-kartpostal-alinti { font-family: Georgia, "Times New Roman", serif; font-size: 1.05rem; font-style: italic; line-height: 1.7; }
+  .modulex-yorum-kartpostal-imza { color: --accentInk--; font-family: "Segoe Script", "Bradley Hand", "Brush Script MT", cursive; font-size: 1.45rem; line-height: 1.2; }
+  .modulex-yorum-kartpostal-adres { position: relative; display: flex; flex-direction: column; gap: 12px; padding-inline-start: clamp(16px, 2.6vw, 28px); }
+  .modulex-yorum-kartpostal-posta { display: flex; align-items: center; justify-content: flex-end; }
+  .modulex-yorum-kartpostal-pul { display: grid; width: 94px; aspect-ratio: 4 / 5; padding: 5px; border: 5px dotted --kartBg--; outline: 1px solid --cizgi--; background: color-mix(in srgb, --accent-- 14%, --kartBg--); transform: rotate(3deg); transition: transform 0.35s ease; }
+  .modulex-yorum-kartpostal-kart:hover .modulex-yorum-kartpostal-pul { transform: rotate(-2deg) scale(1.04); }
+  .modulex-yorum-kartpostal-pfoto { width: 100%; height: 100%; object-fit: cover; }
+  .modulex-yorum-kartpostal-pmono { place-self: center; color: --accentInk--; font-size: 1.8rem; font-weight: 900; }
+  .modulex-yorum-kartpostal-damga { position: relative; z-index: 1; display: grid; flex: none; margin-inline-end: -30px; margin-block-start: 46px; place-items: center; width: 94px; height: 94px; padding: 10px; border: 2px solid color-mix(in srgb, --accentInk-- 75%, transparent); border-radius: 50%; background: color-mix(in srgb, --kartBg-- 62%, transparent); color: --accentInk--; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; line-height: 1.25; text-align: center; text-transform: uppercase; box-shadow: inset 0 0 0 4px --kartBg--, inset 0 0 0 5px color-mix(in srgb, --accentInk-- 55%, transparent); transform: rotate(-14deg); transition: transform 0.45s cubic-bezier(0.3, 1.5, 0.5, 1) 0.2s, visibility 0s 0.2s; }
+  .modulex-yorum-kartpostal--hazir:not(.modulex-yorum-kartpostal--gor) .modulex-yorum-kartpostal-damga { visibility: hidden; transform: rotate(-14deg) scale(1.8); }
+  .modulex-yorum-kartpostal-satirlar { display: grid; margin-block-start: auto; }
+  .modulex-yorum-kartpostal-satirlar li { padding-block: 6px 4px; border-block-end: 1px solid --cizgi--; font-size: 0.92rem; }
+  .modulex-yorum-kartpostal-satirlar li:first-child { font-weight: 700; }
+  @media (max-width: 768px) {
+    .modulex-yorum-kartpostal-yuz { grid-template-columns: minmax(0, 1fr); gap: 18px; min-height: 0; padding: 24px 22px; transform: none; }
+    .modulex-yorum-kartpostal-mesaj { padding-inline-end: 0; padding-block-end: 18px; border-inline-end: 0; border-block-end: 1px solid --cizgi--; }
+    .modulex-yorum-kartpostal-adres { padding-inline-start: 0; }
+    .modulex-yorum-kartpostal-posta { justify-content: flex-start; }
+    .modulex-yorum-kartpostal-pul { width: 76px; }
+    .modulex-yorum-kartpostal-damga { width: 84px; height: 84px; margin-block-start: 30px; margin-inline-end: -14px; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-yorum-kartpostal :is(.modulex-yorum-kartpostal-baslik, .modulex-yorum-kartpostal-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-yorum-kartpostal-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-yorum-kartpostal { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-yorum-kartpostal *, .modulex-yorum-kartpostal *::before, .modulex-yorum-kartpostal *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-yorum-kartpostal";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const gozlem = (s, P, az) => {
+        const gor = () => s.classList.add(P + "--gor");
+        s.classList.add(P + "--hazir");
+        if (az || !("IntersectionObserver" in window)) { gor(); return; }
+        const io = new IntersectionObserver((gs) => {
+          gs.forEach((g) => { if (g.isIntersecting) { gor(); io.disconnect(); } });
+        }, { threshold: 0.15 });
+        io.observe(s);
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      gozlem(s, P, az);
+    });
+  })();
+</script>

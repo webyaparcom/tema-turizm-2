@@ -1,0 +1,41 @@
+{
+  "id": "73u4ejn1ry",
+  "name": {
+    "tr": "Rotalar",
+    "en": "Routes",
+    "ar": "الجولات"
+  },
+  "description": {
+    "tr": "Konakta bir gün ve köy rotalarının rehberleri.",
+    "en": "A day at the house and the guides of the village routes.",
+    "ar": "يوم في البيت ومرشدو الجولات القروية."
+  },
+  "keyword": {
+    "tr": "Rotalar",
+    "en": "Routes",
+    "ar": "الجولات"
+  },
+  "path": "hizmetler",
+  "icon": "work",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "xh73lo",
+      "ccc0bm",
+      "l8v9zu"
+    ],
+    "footer": []
+  },
+  "index": 0,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Rotalar",
+    "en": "Routes",
+    "ar": "الجولات"
+  },
+  "date": "2026-11-16T18:17:26.480Z",
+  "update": "2026-11-16T18:25:02.885Z"
+}

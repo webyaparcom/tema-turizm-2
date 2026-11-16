@@ -1,0 +1,48 @@
+{
+  "name": {
+    "tr": "Konak",
+    "en": "The house",
+    "ar": "البيت"
+  },
+  "status": "play",
+  "category": "",
+  "id": "hakkimizda",
+  "url": "",
+  "path": "hakkimizda",
+  "index": 1,
+  "icon": "info",
+  "desing": {
+    "header": [],
+    "body": [
+      "kdqfsf",
+      "vfy65t",
+      "rst9g1"
+    ],
+    "footer": []
+  },
+  "pathnext": "",
+  "description": {
+    "tr": "İlkeler, sezonun sayıları ve misafir kartpostalları (kurgusal).",
+    "en": "Principles, the season in figures and guest postcards (fictional).",
+    "ar": "المبادئ وأرقام الموسم وبطاقات الضيوف (افتراضي)."
+  },
+  "spot": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "desc": {},
+  "title": {
+    "tr": "Konak",
+    "en": "The house",
+    "ar": "البيت"
+  },
+  "keyword": {
+    "tr": "hakkımızda",
+    "en": "about",
+    "ar": "من نحن"
+  },
+  "text": {},
+  "update": "2026-11-16T18:25:02.889Z",
+  "date": "2026-10-30"
+}

@@ -1,0 +1,120 @@
+<section class="modulex-sayac-pasaport-damga{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-sayac-pasaport-damga-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</section>
+
+<style>
+  /* sayac-pasaport-damga — sayac-brutal kalın çerçeveli kartlar, sayac-kabarcik değere göre daireler kurar; bu modül biçimi döngüyle değişen, eğik basılmış damga iskeletidir (gilyoş sayfa + kırım + damga + el yazısı not) — seyahat / gezi günlüğü dili. */
+  .modulex-sayac-pasaport-damga { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-sayac-pasaport-damga *, .modulex-sayac-pasaport-damga *::before, .modulex-sayac-pasaport-damga *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-sayac-pasaport-damga :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-sayac-pasaport-damga :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-sayac-pasaport-damga :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-sayac-pasaport-damga :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-sayac-pasaport-damga img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-sayac-pasaport-damga) img { height: auto; }
+  .modulex-sayac-pasaport-damga [hidden] { display: none !important; }
+  .modulex-sayac-pasaport-damga :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-sayac-pasaport-damga :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-sayac-pasaport-damga-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-sayac-pasaport-damga-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-sayac-pasaport-damga--bassiz .modulex-sayac-pasaport-damga-bas { display: none; }
+  .modulex-sayac-pasaport-damga-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-sayac-pasaport-damga-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-sayac-pasaport-damga-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-sayac-pasaport-damga-bas { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px 48px; align-items: end; }
+  .modulex-sayac-pasaport-damga-ust { grid-column: 1 / -1; }
+  .modulex-sayac-pasaport-damga-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-sayac-pasaport-damga-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-sayac-pasaport-damga-dugme:hover { transform: translateY(-2px); }
+  .modulex-sayac-pasaport-damga-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-sayac-pasaport-damga-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-sayac-pasaport-damga-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-sayac-pasaport-damga-pasaport { position: relative; padding: clamp(26px, 4vw, 54px); border: 1px solid --cizgi--; border-radius: 14px; background: repeating-radial-gradient(circle at 50% 120%, transparent 0 14px, color-mix(in srgb, --accent-- 7%, transparent) 14px 15px), --kartBg--; box-shadow: 0 30px 60px -45px color-mix(in srgb, --text-- 60%, transparent); }
+  .modulex-sayac-pasaport-damga-pasaport::before { content: ""; position: absolute; inset-block: 0; inset-inline-start: calc(50% - 1px); width: 2px; background: linear-gradient(180deg, transparent, --cizgi-- 15% 85%, transparent); box-shadow: 6px 0 14px color-mix(in srgb, --text-- 8%, transparent); }
+  .modulex-sayac-pasaport-damga-sayfa { position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); justify-items: center; gap: 40px 36px; }
+  .modulex-sayac-pasaport-damga-damga { display: grid; justify-items: center; align-content: start; gap: 14px; text-align: center; }
+  .modulex-sayac-pasaport-damga-murekkep { display: grid; place-content: center; justify-items: center; gap: 2px; width: 190px; aspect-ratio: 1; padding: 22px; border: 4px solid --accentInk--; color: --accentInk--; transform: rotate(var(--r)); transition: transform 0.45s cubic-bezier(0.2, 1.6, 0.4, 1), visibility 0.45s; transition-delay: calc(var(--i) * 0.16s); }
+  .modulex-sayac-pasaport-damga--hazir:not(.modulex-sayac-pasaport-damga--gor) .modulex-sayac-pasaport-damga-murekkep { transform: rotate(var(--r)) scale(1.7); visibility: hidden; }
+  .modulex-sayac-pasaport-damga-damga:hover .modulex-sayac-pasaport-damga-murekkep { transform: rotate(0deg) scale(1.04); transition-delay: 0s; }
+  .modulex-sayac-pasaport-damga-damga--daire .modulex-sayac-pasaport-damga-murekkep { border-width: 7px; border-style: double; border-radius: 50%; }
+  .modulex-sayac-pasaport-damga-damga--kare .modulex-sayac-pasaport-damga-murekkep { border-radius: 8px; outline: 1.5px dashed --accentInk--; outline-offset: -11px; }
+  .modulex-sayac-pasaport-damga-damga--oval .modulex-sayac-pasaport-damga-murekkep { width: 224px; aspect-ratio: 1.4; border-radius: 50%; }
+  .modulex-sayac-pasaport-damga-damga--kesik .modulex-sayac-pasaport-damga-murekkep { border-style: dashed; border-radius: 28px; }
+  .modulex-sayac-pasaport-damga-ikon { font-size: 26px; }
+  .modulex-sayac-pasaport-damga-sayi { font-family: var(--mx-font-mono, ui-monospace, monospace); font-size: clamp(1.8rem, 3vw, 2.3rem); font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; line-height: 1.05; }
+  .modulex-sayac-pasaport-damga-ek { font-size: 0.55em; }
+  .modulex-sayac-pasaport-damga-etiket { max-width: 14ch; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.14em; line-height: 1.3; text-transform: uppercase; }
+  .modulex-sayac-pasaport-damga-not { max-width: 24ch; color: --muted--; font-family: var(--mx-font-heading, Georgia, serif); font-size: 0.95rem; font-style: italic; }
+  @media (max-width: 768px) {
+    .modulex-sayac-pasaport-damga-pasaport::before { display: none; }
+    .modulex-sayac-pasaport-damga-sayfa { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 12px; }
+    .modulex-sayac-pasaport-damga-murekkep, .modulex-sayac-pasaport-damga-damga--oval .modulex-sayac-pasaport-damga-murekkep { width: min(100%, 148px); padding: 14px; }
+    .modulex-sayac-pasaport-damga-damga--oval .modulex-sayac-pasaport-damga-murekkep { aspect-ratio: 1.15; }
+    .modulex-sayac-pasaport-damga-sayi { font-size: 1.45rem; }
+    .modulex-sayac-pasaport-damga-etiket { font-size: 0.66rem; letter-spacing: 0.08em; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-sayac-pasaport-damga :is(.modulex-sayac-pasaport-damga-baslik, .modulex-sayac-pasaport-damga-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-sayac-pasaport-damga-baslik { line-height: 1.35; }
+  @media (max-width: 1024px) {
+    .modulex-sayac-pasaport-damga-bas { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .modulex-sayac-pasaport-damga { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-sayac-pasaport-damga *, .modulex-sayac-pasaport-damga *::before, .modulex-sayac-pasaport-damga *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-sayac-pasaport-damga";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const gozlem = (s, P, az) => {
+        const gor = () => s.classList.add(P + "--gor");
+        s.classList.add(P + "--hazir");
+        if (az || !("IntersectionObserver" in window)) { gor(); return; }
+        const io = new IntersectionObserver((gs) => {
+          gs.forEach((g) => { if (g.isIntersecting) { gor(); io.disconnect(); } });
+        }, { threshold: 0.15 });
+        io.observe(s);
+      };
+    const sayac = (s, P, az) => {
+        const el = [...s.querySelectorAll("[data-hedef]")];
+        if (!el.length || az || !("IntersectionObserver" in window)) return;
+        const dl = document.documentElement.lang || undefined;
+        const oynat = () => el.forEach((e) => {
+          const h = Number(e.dataset.hedef);
+          const od = Number(e.dataset.ondalik) || 0;
+          const son = e.textContent;
+          if (!Number.isFinite(h)) return;
+          let f;
+          try { f = new Intl.NumberFormat(dl, { minimumFractionDigits: od, maximumFractionDigits: od }); } catch (x) { return; }
+          const t0 = performance.now();
+          const adim = (t) => {
+            const p = Math.min(1, (t - t0) / 1300);
+            e.textContent = p < 1 ? f.format(h * (1 - Math.pow(1 - p, 3))) : son;
+            if (p < 1) requestAnimationFrame(adim);
+          };
+          requestAnimationFrame(adim);
+        });
+        const io = new IntersectionObserver((gs) => {
+          gs.forEach((g) => { if (g.isIntersecting) { oynat(); io.disconnect(); } });
+        }, { threshold: 0.3 });
+        io.observe(s);
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      gozlem(s, P, az);
+      sayac(s, P, az);
+    });
+  })();
+</script>

@@ -1,0 +1,52 @@
+{
+  "name": "Üst Yatay Kaydır — ok düğmeli kaydırmalı menü rayı",
+  "description": "Logo, menü rayı ve sonda dil + düğme. Sayfalar sığmazsa menü tek satırda yatay kayar; yalnız o yönde gizli sayfa varken önceki/sonraki ok düğmeleri ve kenar soluklaşması belirir, etkin sayfa kendiliğinden görünür alana alınır. Dar ekranda ray logonun altına iner. JS yoksa menü sarılır. Hamburger de taşma da yok: çok sayfa tek satırda, ok düğmeleriyle (klavye/fare ile de) kaydırılır — şerit menüden farkı her ekranda çalışan oklar ve yön duyarlı solma. Sayfalar site sayfalarından, dil seçici {{langbar}}, logo {{logo}}. Mobil menü erişilebilir (aria-expanded, Esc, odak). Renkler desing + var(--mx-site-*); mantıksal CSS → RTL.",
+  "version": "1.0.0",
+  "icon": "swap_horiz",
+  "category": "menu",
+  "subCategory": "scroll-arrows",
+  "tags": [
+    "menu",
+    "scroll",
+    "arrows",
+    "carousel-nav",
+    "no-hamburger",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "0px",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "cta_ad": "",
+    "cta_url": "",
+    "tel": "",
+    "logoimg": "",
+    "bg": "var(--mx-site-bg, #ffffff)",
+    "text": "var(--mx-site-text, #111318)",
+    "muted": "color-mix(in srgb, var(--mx-site-text, #111318) 68%, var(--mx-site-bg, #ffffff))",
+    "kartBg": "var(--mx-site-surface, #f6f7f9)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-text, #111318) 12%, transparent)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 70%, var(--mx-site-text, #111318))",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "vurguBg": "var(--mx-site-primary, #2563eb)",
+    "vurguText": "var(--mx-site-primary-contrast, #ffffff)",
+    "logoH": "44px",
+    "bgcolor": "var(--mx-site-bg, #ffffff)",
+    "color": "var(--mx-site-text, #111318)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "data",
+    "alanlar": {
+      "name": "ek bağlantı adı (dil sözlüğü)",
+      "url": "iç yol ya da dış adres (dış adres yeni sekmede)"
+    }
+  }
+}

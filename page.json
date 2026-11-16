@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "id": "73u4ejn1ry",
+      "name": {
+        "tr": "Rotalar",
+        "en": "Routes",
+        "ar": "الجولات"
+      },
+      "description": {
+        "tr": "Konakta bir gün ve köy rotalarının rehberleri.",
+        "en": "A day at the house and the guides of the village routes.",
+        "ar": "يوم في البيت ومرشدو الجولات القروية."
+      },
+      "path": "hizmetler",
+      "icon": "work",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "xh73lo",
+          "ccc0bm",
+          "l8v9zu"
+        ],
+        "footer": []
+      },
+      "index": 0
+    },
+    {
+      "name": {
+        "tr": "Konak",
+        "en": "The house",
+        "ar": "البيت"
+      },
+      "status": "play",
+      "id": "hakkimizda",
+      "path": "hakkimizda",
+      "category": "",
+      "url": "",
+      "index": 1,
+      "icon": "info",
+      "desing": {
+        "header": [],
+        "body": [
+          "kdqfsf",
+          "vfy65t",
+          "rst9g1"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "İlkeler, sezonun sayıları ve misafir kartpostalları (kurgusal).",
+        "en": "Principles, the season in figures and guest postcards (fictional).",
+        "ar": "المبادئ وأرقام الموسم وبطاقات الضيوف (افتراضي)."
+      }
+    },
+    {
+      "id": "80jakp694e",
+      "name": {
+        "tr": "Rezervasyon",
+        "en": "Booking",
+        "ar": "الحجز"
+      },
+      "description": {
+        "tr": "Gece aralığına göre rezervasyon talebi (demo).",
+        "en": "Booking request by date range (demo).",
+        "ar": "طلب حجز حسب نطاق الليالي (تجريبي)."
+      },
+      "path": "teklif-al",
+      "icon": "event",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "mnq44i"
+        ],
+        "footer": []
+      },
+      "index": 2
+    },
+    {
+      "name": {
+        "tr": "İletişim",
+        "en": "Contact",
+        "ar": "اتصل بنا"
+      },
+      "status": "play",
+      "id": "iletisim",
+      "path": "iletisim",
+      "category": "",
+      "url": "",
+      "index": 3,
+      "icon": "call",
+      "desing": {
+        "header": [],
+        "body": [
+          "jlv4aq",
+          "k8mp01"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Ulaşım, adres ve resepsiyon saatleri.",
+        "en": "Getting here, address and reception hours.",
+        "ar": "الوصول والعنوان وساعات الاستقبال."
+      }
+    }
+  ],
+  "desc": []
+}

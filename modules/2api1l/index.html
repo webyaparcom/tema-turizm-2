@@ -1,0 +1,108 @@
+<footer class="modulex-alt-yildiz-harita{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-alt-yildiz-harita-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</footer>
+
+<style>
+  /* alt-yildiz-harita — Liste imi bir yıldız (clip-path) ve öğeler kesik bir «takımyıldız hattı»yla bağlı; yıldız alanı metnin atası olmayan ayrı bir katmanda pırıldar (kontrast bozulmaz), hilal iç gölge kaydırmasıyla evre değiştirir — burç/astroloji, gece turu ve kamp için. */
+  .modulex-alt-yildiz-harita { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-alt-yildiz-harita *, .modulex-alt-yildiz-harita *::before, .modulex-alt-yildiz-harita *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-alt-yildiz-harita :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-alt-yildiz-harita :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-alt-yildiz-harita :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-alt-yildiz-harita :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-alt-yildiz-harita img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-alt-yildiz-harita) img { height: auto; }
+  .modulex-alt-yildiz-harita [hidden] { display: none !important; }
+  .modulex-alt-yildiz-harita :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-alt-yildiz-harita :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-alt-yildiz-harita-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-alt-yildiz-harita-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-alt-yildiz-harita--bassiz .modulex-alt-yildiz-harita-bas { display: none; }
+  .modulex-alt-yildiz-harita-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-alt-yildiz-harita-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-alt-yildiz-harita-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-alt-yildiz-harita-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-alt-yildiz-harita-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-alt-yildiz-harita-dugme:hover { transform: translateY(-2px); }
+  .modulex-alt-yildiz-harita-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-alt-yildiz-harita-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-alt-yildiz-harita-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-alt-yildiz-harita-bag { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+  .modulex-alt-yildiz-harita-bag:hover { color: --accentInk--; text-decoration: underline; text-underline-offset: 4px; }
+  .modulex-alt-yildiz-harita-bag[aria-current="page"] { color: --accentInk--; font-weight: 700; }
+  .modulex-alt-yildiz-harita-logo { display: inline-flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; }
+  .modulex-alt-yildiz-harita-logo img { width: auto; max-height: --logoH--; }
+  .modulex-alt-yildiz-harita-ad { font-family: var(--mx-font-heading, inherit); font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .modulex-alt-yildiz-harita-bbaslik { margin-block-end: 14px; color: --accentInk--; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+  .modulex-alt-yildiz-harita-sayfalar, .modulex-alt-yildiz-harita-baglantilar, .modulex-alt-yildiz-harita-iletisim, .modulex-alt-yildiz-harita-yasal { display: grid; gap: 9px; }
+  .modulex-alt-yildiz-harita-il { display: flex; align-items: flex-start; gap: 10px; }
+  .modulex-alt-yildiz-harita-il-ic { display: grid; gap: 2px; }
+  .modulex-alt-yildiz-harita-il-etiket { color: --muted--; font-size: 0.8rem; }
+  .modulex-alt-yildiz-harita-il-ikon { flex: none; color: --accentInk--; font-size: 20px; }
+  .modulex-alt-yildiz-harita-saatler { display: grid; gap: 6px; }
+  .modulex-alt-yildiz-harita-saat { display: flex; justify-content: space-between; gap: 16px; }
+  .modulex-alt-yildiz-harita-saat dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .modulex-alt-yildiz-harita-sosyal { display: flex; flex-wrap: wrap; gap: 10px; }
+  .modulex-alt-yildiz-harita-sosyal-a { display: inline-grid; place-items: center; width: 42px; height: 42px; border: 1px solid --cizgi--; border-radius: 50%; color: inherit; font-size: 18px; transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease; }
+  .modulex-alt-yildiz-harita-sosyal-a:hover { border-color: --accent--; background: --accent--; color: --accentText--; transform: translateY(-2px); }
+  .modulex-alt-yildiz-harita-hakkinda { max-width: 46ch; color: --muted--; }
+  .modulex-alt-yildiz-harita-telif { display: flex; flex-wrap: wrap; gap: 4px 14px; color: --muted--; font-size: 0.9rem; }
+  .modulex-alt-yildiz-harita-dil:empty { display: none; }
+  .modulex-alt-yildiz-harita-yukari { display: inline-grid; place-items: center; flex: none; width: 46px; height: 46px; border-radius: 50%; background: --accent--; color: --accentText--; text-decoration: none; transition: transform 0.25s ease; }
+  .modulex-alt-yildiz-harita-yukari:hover { transform: translateY(-3px); }
+  .modulex-alt-yildiz-harita-bulten { display: grid; gap: 8px; }
+  .modulex-alt-yildiz-harita-nl-etiket { font-size: 0.9rem; font-weight: 700; }
+  .modulex-alt-yildiz-harita-nl-satir { display: flex; flex-wrap: wrap; gap: 8px; }
+  .modulex-alt-yildiz-harita-nl-girdi { flex: 1 1 200px; min-width: 0; min-height: 48px; padding: 10px 18px; border: 1px solid --cizgi--; border-radius: 999px; background: --bg--; color: --text--; font: inherit; }
+  .modulex-alt-yildiz-harita-nl-dugme { display: inline-flex; align-items: center; gap: 6px; min-height: 48px; padding: 10px 22px; border: 0; border-radius: 999px; background: --accent--; color: --accentText--; font: inherit; font-weight: 700; transition: transform 0.2s ease; }
+  .modulex-alt-yildiz-harita-nl-dugme:hover { transform: translateY(-2px); }
+  .modulex-alt-yildiz-harita-nl-dugme .material-symbols-outlined { font-size: 18px; }
+  .modulex-alt-yildiz-harita-nl-durum:empty { display: none; }
+  .modulex-alt-yildiz-harita-nl-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+  .modulex-alt-yildiz-harita-nl-metin { color: --muted--; }
+
+  .modulex-alt-yildiz-harita-yh-gok { position: relative; overflow: hidden; padding: clamp(24px, 4vw, 48px); border-radius: calc(--yuvarlak-- * 1.4); background: radial-gradient(ellipse at 85% -10%, color-mix(in srgb, --accent-- 28%, transparent), transparent 60%), color-mix(in srgb, --text-- 3%, --bg--); box-shadow: inset 0 0 0 1px --cizgi--; }
+  .modulex-alt-yildiz-harita-yh-yildizlar { position: absolute; inset: 0; background-image: radial-gradient(circle at 7% 18%, --text-- 0 1.2px, transparent 1.8px), radial-gradient(circle at 23% 71%, --text-- 0 1px, transparent 1.6px), radial-gradient(circle at 38% 34%, --accentInk-- 0 1.6px, transparent 2.2px), radial-gradient(circle at 52% 86%, --text-- 0 0.9px, transparent 1.5px), radial-gradient(circle at 64% 12%, --text-- 0 1.3px, transparent 1.9px), radial-gradient(circle at 79% 57%, --text-- 0 1px, transparent 1.6px), radial-gradient(circle at 91% 29%, --accentInk-- 0 1.2px, transparent 1.8px), radial-gradient(circle at 15% 44%, color-mix(in srgb, --text-- 60%, transparent) 0 0.8px, transparent 1.4px), radial-gradient(circle at 47% 58%, color-mix(in srgb, --text-- 60%, transparent) 0 0.8px, transparent 1.4px), radial-gradient(circle at 86% 81%, color-mix(in srgb, --text-- 60%, transparent) 0 0.8px, transparent 1.4px); background-size: 310px 230px, 310px 230px, 310px 230px, 310px 230px, 310px 230px, 310px 230px, 310px 230px, 190px 170px, 190px 170px, 190px 170px; pointer-events: none; animation: modulex-alt-yildiz-harita-yh-pirilti 5s ease-in-out infinite alternate; }
+  @keyframes modulex-alt-yildiz-harita-yh-pirilti { from { opacity: 0.3; } to { opacity: 0.85; } }
+  .modulex-alt-yildiz-harita-yh-ust, .modulex-alt-yildiz-harita-yh-takimlar { position: relative; z-index: 1; }
+  .modulex-alt-yildiz-harita-yh-ust { display: flex; align-items: center; gap: 24px; margin-block-end: clamp(28px, 4vw, 44px); }
+  .modulex-alt-yildiz-harita-yh-kimlik { display: flex; flex-wrap: wrap; align-items: center; flex: 1; gap: 14px 30px; min-width: 0; }
+  .modulex-alt-yildiz-harita-yh-kimlik .modulex-alt-yildiz-harita-hakkinda { flex: 1 1 300px; }
+  .modulex-alt-yildiz-harita-yh-ay { flex: none; width: 74px; aspect-ratio: 1; border-radius: 50%; box-shadow: inset -18px 8px 0 0 --accentInk--, 0 0 40px -6px color-mix(in srgb, --accent-- 55%, transparent); transform: rotate(-12deg); transition: box-shadow 0.8s ease, transform 0.8s ease; }
+  .modulex-alt-yildiz-harita-yh-gok:hover .modulex-alt-yildiz-harita-yh-ay { box-shadow: inset -7px 3px 0 0 --accentInk--, 0 0 56px -4px color-mix(in srgb, --accent-- 70%, transparent); transform: rotate(10deg); }
+  .modulex-alt-yildiz-harita-yh-takimlar { display: flex; flex-wrap: wrap; gap: 30px 40px; }
+  .modulex-alt-yildiz-harita-yh-takim { display: grid; align-content: start; gap: 14px; flex: 1 1 190px; min-width: 0; }
+  .modulex-alt-yildiz-harita-yh-ad { display: flex; align-items: center; gap: 10px; color: --accentInk--; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; }
+  .modulex-alt-yildiz-harita-yh-parlak { flex: none; width: 14px; height: 14px; background: --accentInk--; clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); transition: transform 0.6s ease; }
+  .modulex-alt-yildiz-harita-yh-takim:hover .modulex-alt-yildiz-harita-yh-parlak { transform: rotate(90deg) scale(1.4); }
+  .modulex-alt-yildiz-harita-yh-hat { position: relative; display: grid; gap: 10px; padding-inline-start: 22px; }
+  .modulex-alt-yildiz-harita-yh-hat::before { content: ""; position: absolute; inset-block: 10px; inset-inline-start: 4px; border-inline-start: 1px dashed color-mix(in srgb, --text-- 40%, transparent); }
+  .modulex-alt-yildiz-harita-yh-hat li { position: relative; }
+  .modulex-alt-yildiz-harita-yh-hat li::before { content: ""; position: absolute; inset-inline-start: -22px; inset-block-start: 0.45em; width: 10px; height: 10px; background-color: --text--; clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); transition: transform 0.4s ease, background-color 0.4s ease; }
+  .modulex-alt-yildiz-harita-yh-hat li:hover::before { background-color: --accent--; transform: scale(1.7) rotate(45deg); }
+  .modulex-alt-yildiz-harita-yh-dip { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-block-start: 24px; }
+  .modulex-alt-yildiz-harita-yh-dip .modulex-alt-yildiz-harita-telif { margin-inline-end: auto; }
+  .modulex-alt-yildiz-harita-yh-yasal { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.9rem; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-alt-yildiz-harita-yh-ad { letter-spacing: 0; }
+  @media (max-width: 768px) {
+    .modulex-alt-yildiz-harita-yh-ust { align-items: flex-start; }
+    .modulex-alt-yildiz-harita-yh-ay { width: 52px; }
+    .modulex-alt-yildiz-harita-yh-takimlar { gap: 26px; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-alt-yildiz-harita :is(.modulex-alt-yildiz-harita-baslik, .modulex-alt-yildiz-harita-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-alt-yildiz-harita-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-alt-yildiz-harita { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-alt-yildiz-harita *, .modulex-alt-yildiz-harita *::before, .modulex-alt-yildiz-harita *::after { animation: none !important; transition: none !important; }
+  }
+</style>

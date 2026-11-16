@@ -1,0 +1,140 @@
+<header class="modulex-ust-yatay-kaydir{{fbsinif}}" {{fbetiket}}>
+  <div class="modulex-ust-yatay-kaydir-ic">
+    {{fbbas}}
+    {{fbgovde}}
+  </div>
+</header>
+
+<style>
+  /* ust-yatay-kaydir — Hamburger de taşma da yok: çok sayfa tek satırda, ok düğmeleriyle (klavye/fare ile de) kaydırılır — şerit menüden farkı her ekranda çalışan oklar ve yön duyarlı solma. */
+  .modulex-ust-yatay-kaydir { box-sizing: border-box; width: 100%; padding: --bosluk-- 20px; background: --bg--; color: --text--; font-size: 1rem; line-height: 1.6; font-family: var(--mx-font-sans, inherit); overflow-wrap: break-word; }
+  .modulex-ust-yatay-kaydir *, .modulex-ust-yatay-kaydir *::before, .modulex-ust-yatay-kaydir *::after { box-sizing: border-box; }
+  /* ham/css.css «* { font-size: 14px }» kalıtımı keser — modül içinde boyut üstten gelsin (ikon yazı tipi hariç) */
+  .modulex-ust-yatay-kaydir :where(*:not(.material-symbols-outlined)) { font-size: inherit; }
+  /* aynı «*» kuralı font-weight 400 · line-height 1.2 · font-family de basar — modül içinde kalıtım */
+  .modulex-ust-yatay-kaydir :where(*:not(.material-symbols-outlined)) { font-weight: inherit; line-height: inherit; font-family: inherit; }
+  .modulex-ust-yatay-kaydir :where(h2, h3, h4, p, ul, ol, li, figure, blockquote, dl, dd) { margin: 0; }
+  .modulex-ust-yatay-kaydir :where(ul, ol) { padding: 0; list-style: none; }
+  .modulex-ust-yatay-kaydir img { display: block; max-width: 100%; }
+  /* <img width height> öznitelik yüksekliği CSS aspect-ratio'yu ezer — sıfır özgüllükle auto (modül sınıfının height'ı yine kazanır) */
+  :where(.modulex-ust-yatay-kaydir) img { height: auto; }
+  .modulex-ust-yatay-kaydir [hidden] { display: none !important; }
+  .modulex-ust-yatay-kaydir :where(a, button, summary, [data-cevir]) { cursor: pointer; }
+  .modulex-ust-yatay-kaydir :where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid --accent--; outline-offset: 3px; }
+  .modulex-ust-yatay-kaydir-ic { max-width: --max--; margin-inline: auto; }
+  .modulex-ust-yatay-kaydir-bas { display: grid; gap: 12px; margin-block-end: clamp(32px, 4vw, 52px); }
+  .modulex-ust-yatay-kaydir--bassiz .modulex-ust-yatay-kaydir-bas { display: none; }
+  .modulex-ust-yatay-kaydir-ust { color: --accentInk--; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .modulex-ust-yatay-kaydir-baslik { font-family: var(--mx-font-heading, inherit); font-size: clamp(1.8rem, 3.4vw, 2.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.1; }
+  .modulex-ust-yatay-kaydir-metin { color: --muted--; font-size: 1.05rem; line-height: 1.7; }
+  .modulex-ust-yatay-kaydir-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-block-start: 8px; }
+  .modulex-ust-yatay-kaydir-dugme { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 12px 22px; border: 2px solid --accent--; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; }
+  .modulex-ust-yatay-kaydir-dugme:hover { transform: translateY(-2px); }
+  .modulex-ust-yatay-kaydir-dugme--ikincil { background: transparent; color: --text--; border-color: --cizgi--; }
+  .modulex-ust-yatay-kaydir-dugme--ikincil:hover { border-color: --accent--; }
+  .modulex-ust-yatay-kaydir-dugme .material-symbols-outlined { font-size: 20px; }
+
+  .modulex-ust-yatay-kaydir { position: relative; z-index: 900; }
+  .modulex-ust-yatay-kaydir-logo { display: inline-flex; flex: 0 1 auto; min-width: 0; align-items: center; color: inherit; text-decoration: none; }
+  /* dar ekranda geniş logo/uzun ad çubuğu taşırmasın: logo daralır (img max-width 100%), ad sarar */
+  .modulex-ust-yatay-kaydir-logo img { width: auto; max-height: --logoH--; }
+  .modulex-ust-yatay-kaydir-ad { font-family: var(--mx-font-heading, inherit); font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .modulex-ust-yatay-kaydir-oge { position: relative; display: inline-flex; align-items: center; min-height: 44px; color: inherit; font-weight: 600; text-decoration: none; transition: color 0.2s ease, background 0.2s ease; }
+  .modulex-ust-yatay-kaydir-oge:hover, .modulex-ust-yatay-kaydir-oge[aria-current="page"] { color: --accentInk--; }
+  .modulex-ust-yatay-kaydir-cta { display: inline-flex; flex: none; align-items: center; gap: 6px; min-height: 44px; padding: 8px 18px; border-radius: 999px; background: --accent--; color: --accentText--; font-weight: 700; text-decoration: none; white-space: nowrap; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .modulex-ust-yatay-kaydir-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -12px --accent--; }
+  .modulex-ust-yatay-kaydir-cta .material-symbols-outlined, .modulex-ust-yatay-kaydir-tel .material-symbols-outlined, .modulex-ust-yatay-kaydir-posta .material-symbols-outlined { font-size: 18px; }
+  .modulex-ust-yatay-kaydir-tel, .modulex-ust-yatay-kaydir-posta { display: inline-flex; align-items: center; gap: 6px; color: inherit; text-decoration: none; white-space: nowrap; }
+  .modulex-ust-yatay-kaydir-tel:hover, .modulex-ust-yatay-kaydir-posta:hover { color: --accentInk--; }
+  .modulex-ust-yatay-kaydir-dil:empty { display: none; }
+  .modulex-ust-yatay-kaydir-ac { display: none; align-items: center; gap: 10px; min-width: 46px; min-height: 46px; padding: 0 12px; border: 1px solid --cizgi--; border-radius: 999px; background: transparent; color: inherit; font: inherit; font-weight: 700; }
+  .modulex-ust-yatay-kaydir-ac-ikon { display: grid; gap: 4px; width: 20px; }
+  .modulex-ust-yatay-kaydir-ac-ikon span { display: block; height: 2px; border-radius: 2px; background: currentColor; transition: transform 0.3s ease, opacity 0.3s ease; }
+  .modulex-ust-yatay-kaydir--acik .modulex-ust-yatay-kaydir-ac-ikon span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .modulex-ust-yatay-kaydir--acik .modulex-ust-yatay-kaydir-ac-ikon span:nth-child(2) { opacity: 0; }
+  .modulex-ust-yatay-kaydir--acik .modulex-ust-yatay-kaydir-ac-ikon span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .modulex-ust-yatay-kaydir-kapat { display: inline-grid; place-items: center; width: 46px; height: 46px; border: 1px solid --cizgi--; border-radius: 50%; background: transparent; color: inherit; }
+  .modulex-ust-yatay-kaydir-perde { position: fixed; inset: 0; z-index: 1; background: color-mix(in srgb, --text-- 45%, transparent); animation: modulex-ust-yatay-kaydir-sol 0.3s ease both; }
+  @keyframes modulex-ust-yatay-kaydir-sol { from { opacity: 0; } to { opacity: 1; } }
+
+  .modulex-ust-yatay-kaydir-cubuk { display: flex; align-items: center; gap: 12px 24px; padding-block: 14px; }
+  .modulex-ust-yatay-kaydir-cubuk > .modulex-ust-yatay-kaydir-logo { flex: none; }
+  .modulex-ust-yatay-kaydir-ray { position: relative; display: flex; flex: 1 1 auto; align-items: center; gap: 6px; min-width: 0; }
+  .modulex-ust-yatay-kaydir-kaydir { flex: 1 1 auto; min-width: 0; }
+  .modulex-ust-yatay-kaydir-kliste { display: flex; flex-wrap: wrap; gap: 4px 6px; }
+  .modulex-ust-yatay-kaydir--kj .modulex-ust-yatay-kaydir-kaydir { overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: none; }
+  .modulex-ust-yatay-kaydir--kj .modulex-ust-yatay-kaydir-kaydir::-webkit-scrollbar { display: none; }
+  .modulex-ust-yatay-kaydir--kj .modulex-ust-yatay-kaydir-kliste { flex-wrap: nowrap; width: max-content; padding-inline: 4px; }
+  .modulex-ust-yatay-kaydir--bas .modulex-ust-yatay-kaydir-kaydir { -webkit-mask-image: linear-gradient(90deg, transparent, black 36px); mask-image: linear-gradient(90deg, transparent, black 36px); }
+  .modulex-ust-yatay-kaydir--son .modulex-ust-yatay-kaydir-kaydir { -webkit-mask-image: linear-gradient(90deg, black calc(100% - 36px), transparent); mask-image: linear-gradient(90deg, black calc(100% - 36px), transparent); }
+  .modulex-ust-yatay-kaydir--bas.modulex-ust-yatay-kaydir--son .modulex-ust-yatay-kaydir-kaydir { -webkit-mask-image: linear-gradient(90deg, transparent, black 36px, black calc(100% - 36px), transparent); mask-image: linear-gradient(90deg, transparent, black 36px, black calc(100% - 36px), transparent); }
+  [dir="rtl"] .modulex-ust-yatay-kaydir--bas .modulex-ust-yatay-kaydir-kaydir { -webkit-mask-image: linear-gradient(270deg, transparent, black 36px); mask-image: linear-gradient(270deg, transparent, black 36px); }
+  [dir="rtl"] .modulex-ust-yatay-kaydir--son .modulex-ust-yatay-kaydir-kaydir { -webkit-mask-image: linear-gradient(270deg, black calc(100% - 36px), transparent); mask-image: linear-gradient(270deg, black calc(100% - 36px), transparent); }
+  [dir="rtl"] .modulex-ust-yatay-kaydir--bas.modulex-ust-yatay-kaydir--son .modulex-ust-yatay-kaydir-kaydir { -webkit-mask-image: linear-gradient(270deg, transparent, black 36px, black calc(100% - 36px), transparent); mask-image: linear-gradient(270deg, transparent, black 36px, black calc(100% - 36px), transparent); }
+  .modulex-ust-yatay-kaydir-kliste > li { flex: none; scroll-snap-align: start; }
+  .modulex-ust-yatay-kaydir-kliste .modulex-ust-yatay-kaydir-oge { padding-inline: 14px; border-radius: 10px; white-space: nowrap; }
+  .modulex-ust-yatay-kaydir-kliste .modulex-ust-yatay-kaydir-oge:hover { background-color: color-mix(in srgb, --text-- 6%, transparent); color: --text--; }
+  .modulex-ust-yatay-kaydir-kliste .modulex-ust-yatay-kaydir-oge[aria-current="page"] { color: --text--; box-shadow: inset 0 -3px 0 --accent--; border-end-start-radius: 0; border-end-end-radius: 0; }
+  .modulex-ust-yatay-kaydir-ok { display: inline-grid; flex: none; place-items: center; width: 38px; height: 38px; padding: 0; border: 1px solid --cizgi--; border-radius: 50%; background-color: --bg--; color: inherit; transition: border-color 0.2s ease, color 0.2s ease; animation: modulex-ust-yatay-kaydir-ok 0.25s ease both; }
+  .modulex-ust-yatay-kaydir-ok:hover { border-color: --accent--; color: --accentInk--; }
+  @keyframes modulex-ust-yatay-kaydir-ok { from { opacity: 0; transform: scale(0.7); } to { opacity: 1; transform: none; } }
+  .modulex-ust-yatay-kaydir-uc { display: flex; flex: none; align-items: center; gap: 12px; }
+  @media (max-width: 1024px) {
+    .modulex-ust-yatay-kaydir-cubuk { flex-wrap: wrap; }
+    .modulex-ust-yatay-kaydir-ray { order: 3; flex-basis: 100%; }
+    .modulex-ust-yatay-kaydir-uc { flex: 0 1 auto; flex-wrap: wrap; justify-content: flex-end; margin-inline-start: auto; }
+  }
+  @media (max-width: 768px) {
+    .modulex-ust-yatay-kaydir-ok { width: 34px; height: 34px; }
+    .modulex-ust-yatay-kaydir-uc .modulex-ust-yatay-kaydir-cta { min-height: 40px; padding-inline: 14px; font-size: 0.9rem; }
+  }
+
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-ust-yatay-kaydir :is(.modulex-ust-yatay-kaydir-baslik, .modulex-ust-yatay-kaydir-ust, h3, h4, strong) { letter-spacing: 0; }
+  :is([lang="ar"], [lang="fa"], [lang="he"], [lang="ur"]) .modulex-ust-yatay-kaydir-baslik { line-height: 1.35; }
+  @media (max-width: 768px) {
+    .modulex-ust-yatay-kaydir { padding-inline: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-ust-yatay-kaydir *, .modulex-ust-yatay-kaydir *::before, .modulex-ust-yatay-kaydir *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+<script>
+  (() => {
+    const P = "modulex-ust-yatay-kaydir";
+    const az = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const kaydir = (s, P, az) => {
+        const sc = s.querySelector("." + P + "-kaydir");
+        const geri = s.querySelector("." + P + "-ok--geri");
+        const ileri = s.querySelector("." + P + "-ok--ileri");
+        if (!sc || !geri || !ileri) return;
+        s.classList.add(P + "--kj");
+        const rtl = () => getComputedStyle(sc).direction === "rtl";
+        const guncel = () => {
+          const x = Math.abs(sc.scrollLeft);
+          const bas = x > 8;
+          const son = x + sc.clientWidth < sc.scrollWidth - 8;
+          geri.hidden = !bas;
+          ileri.hidden = !son;
+          s.classList.toggle(P + "--bas", bas);
+          s.classList.toggle(P + "--son", son);
+        };
+        const git = (yon) => sc.scrollBy({ left: yon * (rtl() ? -1 : 1) * Math.max(120, sc.clientWidth * 0.7), behavior: az ? "auto" : "smooth" });
+        geri.addEventListener("click", () => git(-1));
+        ileri.addEventListener("click", () => git(1));
+        sc.addEventListener("scroll", guncel, { passive: true });
+        window.addEventListener("resize", guncel);
+        const a = sc.querySelector('[aria-current="page"]');
+        if (a) {
+          const r = a.getBoundingClientRect();
+          const q = sc.getBoundingClientRect();
+          if (r.right > q.right + 8 || r.left < q.left - 8) sc.scrollLeft += r.left + r.width / 2 - (q.left + q.width / 2);
+        }
+        guncel();
+      };
+    document.querySelectorAll("." + P).forEach((s) => {
+      if (s.dataset.fbHazir) return;
+      s.dataset.fbHazir = "1";
+      kaydir(s, P, az);
+    });
+  })();
+</script>

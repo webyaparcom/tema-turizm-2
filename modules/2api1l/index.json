@@ -1,0 +1,63 @@
+{
+  "name": "Alt Yıldız Haritası — pırıldayan gece göğünde hilal ve takımyıldız listeleri",
+  "description": "Koyu, köşeden vurgu renginde ışıyan bir gece göğü: üç katmanlı yıldız alanı yavaşça pırıldar, üst satırda logo, tanıtım, düğme, sosyal ve evreleri hover'da değişen bir hilal; altında takımyıldız grupları (dört köşeli yıldız imli başlıklarla sayfalar · bağlantılar · iletişim · saatler) — sayfa ve bağlantı listeleri kesik çizgiyle birbirine bağlanan yıldız noktalarıyla dizilir, üzerine gelinen yıldız büyüyüp döner. Altta telif, yasal, dil, başa dön. Liste imi bir yıldız (clip-path) ve öğeler kesik bir «takımyıldız hattı»yla bağlı; yıldız alanı metnin atası olmayan ayrı bir katmanda pırıldar (kontrast bozulmaz), hilal iç gölge kaydırmasıyla evre değiştirir — burç/astroloji, gece turu ve kamp için. Sayfalar site sayfalarından, iletişim desing → site ayarı, sosyal wmSocialBar, dil seçici {{langbar}}. Metinler dil sözlüğü / lang.json; renkler desing + var(--mx-site-*); mantıksal CSS → RTL.",
+  "version": "1.0.0",
+  "icon": "nights_stay",
+  "category": "footer",
+  "subCategory": "star-map",
+  "tags": [
+    "footer",
+    "night-sky",
+    "stars",
+    "constellation",
+    "moon",
+    "rtl",
+    "fabrika"
+  ],
+  "desing": {
+    "max": "1200px",
+    "bosluk": "clamp(48px, 6vw, 80px)",
+    "yuvarlak": "18px",
+    "ust": "",
+    "baslik": "",
+    "metin": "",
+    "hakkinda": "",
+    "tel": "",
+    "eposta": "",
+    "adres": "",
+    "cta_ad": "",
+    "cta_url": "",
+    "rightsText": "",
+    "bg": "var(--mx-site-text, #111318)",
+    "text": "var(--mx-site-bg, #ffffff)",
+    "muted": "color-mix(in srgb, var(--mx-site-bg, #ffffff) 78%, var(--mx-site-text, #111318))",
+    "kartBg": "color-mix(in srgb, var(--mx-site-bg, #ffffff) 7%, transparent)",
+    "cizgi": "color-mix(in srgb, var(--mx-site-bg, #ffffff) 18%, transparent)",
+    "accent": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 55%, var(--mx-site-bg, #ffffff))",
+    "accentInk": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 45%, var(--mx-site-bg, #ffffff))",
+    "accentText": "var(--mx-site-text, #111318)",
+    "vurguBg": "color-mix(in srgb, var(--mx-site-primary, #2563eb) 55%, var(--mx-site-bg, #ffffff))",
+    "vurguText": "var(--mx-site-text, #111318)",
+    "logoH": "48px",
+    "bgcolor": "var(--mx-site-text, #111318)",
+    "color": "var(--mx-site-bg, #ffffff)"
+  },
+  "data": [],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing",
+    "alanlar": {
+      "hakkinda": "kısa tanıtım (dil sözlüğü; yoksa setting.description)",
+      "tel": "telefon (yoksa setting.phone)",
+      "eposta": "e-posta (yoksa setting.email)",
+      "adres": "adres (dil sözlüğü; yoksa setting.address)",
+      "services": "bağlantı listesi [{ name, href }] (footer-10)",
+      "hours": "çalışma saatleri [{ days, time }]",
+      "legal": "yasal bağlantılar [{ text, href }]",
+      "social": "sosyal hesaplar [{ ad, url }] (yoksa site ayarı)",
+      "rightsText": "telif satırı (yoksa @all-rights@)",
+      "nlTitle": "bülten başlığı (bülten formu yalnız başlık/metin + alıcı e-posta varken)"
+    }
+  }
+}
