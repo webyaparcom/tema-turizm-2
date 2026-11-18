@@ -2,7 +2,9 @@
   "name": {
     "tr": "Konak",
     "en": "The house",
-    "ar": "البيت"
+    "ar": "البيت",
+    "de": "Haus",
+    "ru": "Дом"
   },
   "status": "play",
   "category": "",
@@ -24,7 +26,9 @@
   "description": {
     "tr": "İlkeler, sezonun sayıları ve misafir kartpostalları (kurgusal).",
     "en": "Principles, the season in figures and guest postcards (fictional).",
-    "ar": "المبادئ وأرقام الموسم وبطاقات الضيوف (افتراضي)."
+    "ar": "المبادئ وأرقام الموسم وبطاقات الضيوف (افتراضي).",
+    "de": "Prinzipien, die Zahlen der Saison und Gästepostkarten (fiktional).",
+    "ru": "Принципы, цифры сезона и открытки гостей (вымышленные)."
   },
   "spot": {
     "tr": "",
@@ -35,12 +39,16 @@
   "title": {
     "tr": "Konak",
     "en": "The house",
-    "ar": "البيت"
+    "ar": "البيت",
+    "de": "Haus",
+    "ru": "Дом"
   },
   "keyword": {
     "tr": "hakkımızda",
     "en": "about",
-    "ar": "من نحن"
+    "ar": "من نحن",
+    "de": "Über uns",
+    "ru": "О нас"
   },
   "text": {},
   "update": "2026-11-16T18:25:02.889Z",

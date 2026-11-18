@@ -5,12 +5,16 @@
       "name": {
         "tr": "Rotalar",
         "en": "Routes",
-        "ar": "الجولات"
+        "ar": "الجولات",
+        "de": "Routen",
+        "ru": "Маршруты"
       },
       "description": {
         "tr": "Konakta bir gün ve köy rotalarının rehberleri.",
         "en": "A day at the house and the guides of the village routes.",
-        "ar": "يوم في البيت ومرشدو الجولات القروية."
+        "ar": "يوم في البيت ومرشدو الجولات القروية.",
+        "de": "Ein Tag im Gästehaus und die Führer der Dorfrouten.",
+        "ru": "День в особняке и гиды по деревенским маршрутам."
       },
       "path": "hizmetler",
       "icon": "work",
@@ -31,7 +35,9 @@
       "name": {
         "tr": "Konak",
         "en": "The house",
-        "ar": "البيت"
+        "ar": "البيت",
+        "de": "Haus",
+        "ru": "Дом"
       },
       "status": "play",
       "id": "hakkimizda",
@@ -53,7 +59,9 @@
       "description": {
         "tr": "İlkeler, sezonun sayıları ve misafir kartpostalları (kurgusal).",
         "en": "Principles, the season in figures and guest postcards (fictional).",
-        "ar": "المبادئ وأرقام الموسم وبطاقات الضيوف (افتراضي)."
+        "ar": "المبادئ وأرقام الموسم وبطاقات الضيوف (افتراضي).",
+        "de": "Prinzipien, die Zahlen der Saison und Gästepostkarten (fiktional).",
+        "ru": "Принципы, цифры сезона и открытки гостей (вымышленные)."
       }
     },
     {
@@ -61,12 +69,16 @@
       "name": {
         "tr": "Rezervasyon",
         "en": "Booking",
-        "ar": "الحجز"
+        "ar": "الحجز",
+        "de": "Reservierung",
+        "ru": "Бронирование"
       },
       "description": {
         "tr": "Gece aralığına göre rezervasyon talebi (demo).",
         "en": "Booking request by date range (demo).",
-        "ar": "طلب حجز حسب نطاق الليالي (تجريبي)."
+        "ar": "طلب حجز حسب نطاق الليالي (تجريبي).",
+        "de": "Reservierungsanfrage nach Nachtzeitraum (Demo).",
+        "ru": "Запрос на бронирование по диапазону ночей (демо)."
       },
       "path": "teklif-al",
       "icon": "event",
@@ -85,7 +97,9 @@
       "name": {
         "tr": "İletişim",
         "en": "Contact",
-        "ar": "اتصل بنا"
+        "ar": "اتصل بنا",
+        "de": "Kontakt",
+        "ru": "Контакты"
       },
       "status": "play",
       "id": "iletisim",
@@ -106,7 +120,9 @@
       "description": {
         "tr": "Ulaşım, adres ve resepsiyon saatleri.",
         "en": "Getting here, address and reception hours.",
-        "ar": "الوصول والعنوان وساعات الاستقبال."
+        "ar": "الوصول والعنوان وساعات الاستقبال.",
+        "de": "Anfahrt, Adresse und Rezeptionszeiten.",
+        "ru": "Как добраться, адрес и часы работы ресепшн."
       }
     }
   ],

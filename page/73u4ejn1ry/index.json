@@ -3,17 +3,23 @@
   "name": {
     "tr": "Rotalar",
     "en": "Routes",
-    "ar": "الجولات"
+    "ar": "الجولات",
+    "de": "Routen",
+    "ru": "Маршруты"
   },
   "description": {
     "tr": "Konakta bir gün ve köy rotalarının rehberleri.",
     "en": "A day at the house and the guides of the village routes.",
-    "ar": "يوم في البيت ومرشدو الجولات القروية."
+    "ar": "يوم في البيت ومرشدو الجولات القروية.",
+    "de": "Ein Tag im Gästehaus und die Führer der Dorfrouten.",
+    "ru": "День в особняке и гиды по деревенским маршрутам."
   },
   "keyword": {
     "tr": "Rotalar",
     "en": "Routes",
-    "ar": "الجولات"
+    "ar": "الجولات",
+    "de": "Routen",
+    "ru": "Маршруты"
   },
   "path": "hizmetler",
   "icon": "work",
@@ -34,7 +40,9 @@
   "title": {
     "tr": "Rotalar",
     "en": "Routes",
-    "ar": "الجولات"
+    "ar": "الجولات",
+    "de": "Routen",
+    "ru": "Маршруты"
   },
   "date": "2026-11-16T18:17:26.480Z",
   "update": "2026-11-16T18:25:02.885Z"
