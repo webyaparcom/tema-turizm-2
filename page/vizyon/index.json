@@ -3,17 +3,23 @@
   "name": {
     "tr": "Vizyon",
     "en": "Vision",
-    "ar": "الرؤية"
+    "ar": "الرؤية",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "description": {
     "tr": "Vizyonumuz",
     "en": "Our vision",
-    "ar": "رؤيتنا"
+    "ar": "رؤيتنا",
+    "de": "Unsere Vision",
+    "ru": "Наше видение"
   },
   "keyword": {
     "tr": "Vizyon",
     "en": "vision, our vision, goals",
-    "ar": "الرؤية, رؤيتنا, الأهداف"
+    "ar": "الرؤية, رؤيتنا, الأهداف",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "path": "vizyon",
   "icon": "visibility",
@@ -29,12 +35,16 @@
   "text": {
     "tr": "<h2>Vizyonumuz</h2>\n<p>Her rotada köy üreticisinin de kazandığı bir konaklama modeli olmak.</p>",
     "en": "<h2>Our vision</h2>\n<p>To be a stay model where village producers also earn on every route.</p>",
-    "ar": "<h2>رؤيتنا</h2>\n<p>أن نكون نموذج إقامة يستفيد فيه منتجو القرى من كل جولة.</p>"
+    "ar": "<h2>رؤيتنا</h2>\n<p>أن نكون نموذج إقامة يستفيد فيه منتجو القرى من كل جولة.</p>",
+    "de": "<h2>Unsere Vision</h2>\n<p>Ein Übernachtungsmodell zu sein, bei dem auch Dorferzeuger auf jeder Route profitieren.</p>",
+    "ru": "<h2>Наша миссия</h2>\n<p>Стать моделью проживания, при которой производители из деревень также зарабатывают на каждом маршруте.</p>"
   },
   "title": {
     "tr": "Vizyon",
     "en": "Vision",
-    "ar": "الرؤية"
+    "ar": "الرؤية",
+    "de": "Vision",
+    "ru": "Видение"
   },
   "date": "2026-11-16T18:17:26.326Z",
   "update": "2026-11-16T18:25:02.904Z",

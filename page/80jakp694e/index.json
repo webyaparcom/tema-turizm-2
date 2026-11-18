@@ -3,17 +3,23 @@
   "name": {
     "tr": "Rezervasyon",
     "en": "Booking",
-    "ar": "الحجز"
+    "ar": "الحجز",
+    "de": "Reservierung",
+    "ru": "Бронирование"
   },
   "description": {
     "tr": "Gece aralığına göre rezervasyon talebi (demo).",
     "en": "Booking request by date range (demo).",
-    "ar": "طلب حجز حسب نطاق الليالي (تجريبي)."
+    "ar": "طلب حجز حسب نطاق الليالي (تجريبي).",
+    "de": "Reservierungsanfrage nach Nachtzeitraum (Demo).",
+    "ru": "Запрос на бронирование по диапазону ночей (демо)."
   },
   "keyword": {
     "tr": "rezervasyon",
     "en": "booking",
-    "ar": "حجز"
+    "ar": "حجز",
+    "de": "Reservierung",
+    "ru": "бронирование"
   },
   "path": "teklif-al",
   "icon": "event",
@@ -32,7 +38,9 @@
   "title": {
     "tr": "Rezervasyon",
     "en": "Booking",
-    "ar": "الحجز"
+    "ar": "الحجز",
+    "de": "Reservierung",
+    "ru": "Бронирование"
   },
   "date": "2026-11-16T18:17:26.490Z",
   "update": "2026-11-16T18:25:02.893Z"

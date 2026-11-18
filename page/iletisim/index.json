@@ -2,7 +2,9 @@
   "name": {
     "tr": "İletişim",
     "en": "Contact",
-    "ar": "اتصل بنا"
+    "ar": "اتصل بنا",
+    "de": "Kontakt",
+    "ru": "Контакты"
   },
   "status": "play",
   "category": "",
@@ -23,7 +25,9 @@
   "description": {
     "tr": "Ulaşım, adres ve resepsiyon saatleri.",
     "en": "Getting here, address and reception hours.",
-    "ar": "الوصول والعنوان وساعات الاستقبال."
+    "ar": "الوصول والعنوان وساعات الاستقبال.",
+    "de": "Anfahrt, Adresse und Rezeptionszeiten.",
+    "ru": "Как добраться, адрес и часы работы ресепшн."
   },
   "spot": {
     "tr": "",
@@ -34,12 +38,16 @@
   "title": {
     "tr": "İletişim",
     "en": "Contact",
-    "ar": "اتصل بنا"
+    "ar": "اتصل بنا",
+    "de": "Kontakt",
+    "ru": "Контакты"
   },
   "keyword": {
     "tr": "iletişim",
     "en": "contact",
-    "ar": "اتصال"
+    "ar": "اتصال",
+    "de": "Kontakt",
+    "ru": "контакты"
   },
   "text": {},
   "update": "2026-11-16T18:25:02.897Z",
